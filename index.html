@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+   <title>Stockr</title>
+   <style>
+   html { height: 100% }
+   body { height: 100%; margin: 0; padding: 0 }
+   #stockChart {
+     height: 100%;
+     display:none;
+   }
+   #stockticker{position: relative;
+   height: 10%;}
+   #info{position: relative;
+    color: black;}
+   </style>
+
+
+      <!-- <script type="text/javascript" src="cordova.js"></script> -->
+</head>
+  <body onload="request('aapl','quote')">
+    <div>
+      <div id="stockticker" onclick="showHide();"></div>
+      <div id="stockChart">
+
+      <ul>
+        <li onclick="request('aapl','chart','1d')">1d</li>
+        <li onclick="request('aapl','chart','1m')">1m</li>
+        <li onclick="request('aapl','chart','3m')">3m</li>
+        <li onclick="request('aapl','chart','ytd')">ytd</li>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
